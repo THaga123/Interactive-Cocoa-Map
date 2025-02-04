@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d0a4bfe460748550d0ff885ca5c694e3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed; 
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    font-size: 22px; 
+    font-weight: bold; 
+    color: #FFFFFF;
+    background: #8B4513DD;
+    padding: 8px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 9999;
+    font-family: Arial;
+">
+    🌍 Global Cocoa Production & Labor Risk Analysis (2024)
+</div>
+    
+            <div class="folium-map" id="map_d0a4bfe460748550d0ff885ca5c694e3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d0a4bfe460748550d0ff885ca5c694e3 = L.map(
+                "map_d0a4bfe460748550d0ff885ca5c694e3",
+                {
+                    center: [10.0, -20.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_573cced08d0492d2d4264e4bda15cd26 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_573cced08d0492d2d4264e4bda15cd26.addTo(map_d0a4bfe460748550d0ff885ca5c694e3);
+        
+    
+            var marker_cluster_02d5428955b26b1add277b970ceaae5c = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_a81ea09c1394b640a0fb0861a0ac15c9 = L.marker(
+                [7.54, -5.55],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_427a3daea26ec701748136d318f99bee = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#8B0000; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                1\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_a81ea09c1394b640a0fb0861a0ac15c9.setIcon(div_icon_427a3daea26ec701748136d318f99bee);
+        
+    
+        var popup_eadd8536716231e65818f74bc8673d6d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0126151c5954dcab305ea4b1da10a83c = $(`<div id="html_0126151c5954dcab305ea4b1da10a83c" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Côte d'Ivoire</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 1<br>                     📦 <b>Annual Production:</b> 1.8M tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Critical<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Extreme<br>                     👥 <b>Modern Slavery Estimate:</b> 156,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FF4444;                           width:42%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Not Free (42/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Global Slavery Index 2023, US DoL 2023         </p>     </div>     </div>`)[0];
+                popup_eadd8536716231e65818f74bc8673d6d.setContent(html_0126151c5954dcab305ea4b1da10a83c);
+            
+        
+
+        marker_a81ea09c1394b640a0fb0861a0ac15c9.bindPopup(popup_eadd8536716231e65818f74bc8673d6d)
+        ;
+
+        
+    
+    
+            marker_a81ea09c1394b640a0fb0861a0ac15c9.bindTooltip(
+                `<div>
+                     Côte d'Ivoire (🥇#1 | Risk: Critical)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_41c1a3cb4357d9414ab7fbfa18971416 = L.marker(
+                [7.95, -1.02],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_1b83e0961908b3f9e85ed605ab8705c8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#8B0000; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                2\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_41c1a3cb4357d9414ab7fbfa18971416.setIcon(div_icon_1b83e0961908b3f9e85ed605ab8705c8);
+        
+    
+        var popup_d203977a003b54eb0ae00b6aea69c879 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b1d9d62f61c4d26c6e3dac99c6d1d6c9 = $(`<div id="html_b1d9d62f61c4d26c6e3dac99c6d1d6c9" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Ghana</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 2<br>                     📦 <b>Annual Production:</b> 1.1M tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Critical<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 133,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:53%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (53/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Walk Free Foundation 2023, ILO 2023         </p>     </div>     </div>`)[0];
+                popup_d203977a003b54eb0ae00b6aea69c879.setContent(html_b1d9d62f61c4d26c6e3dac99c6d1d6c9);
+            
+        
+
+        marker_41c1a3cb4357d9414ab7fbfa18971416.bindPopup(popup_d203977a003b54eb0ae00b6aea69c879)
+        ;
+
+        
+    
+    
+            marker_41c1a3cb4357d9414ab7fbfa18971416.bindTooltip(
+                `<div>
+                     Ghana (🥇#2 | Risk: Critical)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ae065760dbcd4e8e6d02b39095608f30 = L.marker(
+                [-0.79, 113.92],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_e7e445c01d81aa6e339aa00e4cf9c191 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FF4500; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                3\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_ae065760dbcd4e8e6d02b39095608f30.setIcon(div_icon_e7e445c01d81aa6e339aa00e4cf9c191);
+        
+    
+        var popup_0ef5cf79c1de18b2284182bc0c045713 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_61e1872405c5c01fea2b97c51e7f7c13 = $(`<div id="html_61e1872405c5c01fea2b97c51e7f7c13" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Indonesia</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 3<br>                     📦 <b>Annual Production:</b> 600K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> High<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 1,200,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:59%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (59/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: ILO 2023 Country Reports         </p>     </div>     </div>`)[0];
+                popup_0ef5cf79c1de18b2284182bc0c045713.setContent(html_61e1872405c5c01fea2b97c51e7f7c13);
+            
+        
+
+        marker_ae065760dbcd4e8e6d02b39095608f30.bindPopup(popup_0ef5cf79c1de18b2284182bc0c045713)
+        ;
+
+        
+    
+    
+            marker_ae065760dbcd4e8e6d02b39095608f30.bindTooltip(
+                `<div>
+                     Indonesia (🥇#3 | Risk: High)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4e4651cf886b1ebbe617512e1925b056 = L.marker(
+                [9.08, 8.68],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_a577bc32c4d6177c16bd29a7d49b8499 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FF4500; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                4\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_4e4651cf886b1ebbe617512e1925b056.setIcon(div_icon_a577bc32c4d6177c16bd29a7d49b8499);
+        
+    
+        var popup_420447ab3cae907ebeefd49ac04e6273 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6cf46adbc46e6176afbd97743f340672 = $(`<div id="html_6cf46adbc46e6176afbd97743f340672" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Nigeria</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 4<br>                     📦 <b>Annual Production:</b> 340K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> High<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 1,340,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FF4444;                           width:43%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Not Free (43/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: US State Dept 2023 TIP Report         </p>     </div>     </div>`)[0];
+                popup_420447ab3cae907ebeefd49ac04e6273.setContent(html_6cf46adbc46e6176afbd97743f340672);
+            
+        
+
+        marker_4e4651cf886b1ebbe617512e1925b056.bindPopup(popup_420447ab3cae907ebeefd49ac04e6273)
+        ;
+
+        
+    
+    
+            marker_4e4651cf886b1ebbe617512e1925b056.bindTooltip(
+                `<div>
+                     Nigeria (🥇#4 | Risk: High)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e5ab93de96bfb4e43126d7a3ee42eb69 = L.marker(
+                [7.37, 12.35],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_c54ab93a396e9a57202cc4a1ce8fbcc5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FF4500; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                5\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_e5ab93de96bfb4e43126d7a3ee42eb69.setIcon(div_icon_c54ab93a396e9a57202cc4a1ce8fbcc5);
+        
+    
+        var popup_7b5370ecbef8b21b51d893e6585604c5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_56364f39a02715fbae8db5492f8df6c8 = $(`<div id="html_56364f39a02715fbae8db5492f8df6c8" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Cameroon</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 5<br>                     📦 <b>Annual Production:</b> 290K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> High<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 105,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FF4444;                           width:40%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Not Free (40/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Global Slavery Index 2023         </p>     </div>     </div>`)[0];
+                popup_7b5370ecbef8b21b51d893e6585604c5.setContent(html_56364f39a02715fbae8db5492f8df6c8);
+            
+        
+
+        marker_e5ab93de96bfb4e43126d7a3ee42eb69.bindPopup(popup_7b5370ecbef8b21b51d893e6585604c5)
+        ;
+
+        
+    
+    
+            marker_e5ab93de96bfb4e43126d7a3ee42eb69.bindTooltip(
+                `<div>
+                     Cameroon (🥇#5 | Risk: High)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_81d132b42fb4998b770dbe586d96e7dc = L.marker(
+                [-14.24, -51.93],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_8f651d6a0db3629b3085bb4fcc9ef475 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FFD700; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                6\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_81d132b42fb4998b770dbe586d96e7dc.setIcon(div_icon_8f651d6a0db3629b3085bb4fcc9ef475);
+        
+    
+        var popup_aaffac76811b33dd382b115447ca5a2a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1e0e57c5f3308ccc25fd2b9d70f14c57 = $(`<div id="html_1e0e57c5f3308ccc25fd2b9d70f14c57" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Brazil</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 6<br>                     📦 <b>Annual Production:</b> 250K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Moderate<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Moderate<br>                     👥 <b>Modern Slavery Estimate:</b> 369,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#00C851;                           width:75%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Free (75/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Brazilian Labor Ministry 2023         </p>     </div>     </div>`)[0];
+                popup_aaffac76811b33dd382b115447ca5a2a.setContent(html_1e0e57c5f3308ccc25fd2b9d70f14c57);
+            
+        
+
+        marker_81d132b42fb4998b770dbe586d96e7dc.bindPopup(popup_aaffac76811b33dd382b115447ca5a2a)
+        ;
+
+        
+    
+    
+            marker_81d132b42fb4998b770dbe586d96e7dc.bindTooltip(
+                `<div>
+                     Brazil (🥇#6 | Risk: Moderate)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8fd1016164abdb64eaca06c26071ed4d = L.marker(
+                [-1.83, -78.18],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_0a9b3908b4e93965773dec6cdab0cfde = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FFD700; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                7\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_8fd1016164abdb64eaca06c26071ed4d.setIcon(div_icon_0a9b3908b4e93965773dec6cdab0cfde);
+        
+    
+        var popup_99429c35685abaa22b2ee6b528b676dd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fe0c1e3721a46f2d716ce0153eff1220 = $(`<div id="html_fe0c1e3721a46f2d716ce0153eff1220" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Ecuador</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 7<br>                     📦 <b>Annual Production:</b> 230K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Moderate<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Moderate<br>                     👥 <b>Modern Slavery Estimate:</b> 89,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:67%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (67/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Ecuadorian Ombudsman Report 2023         </p>     </div>     </div>`)[0];
+                popup_99429c35685abaa22b2ee6b528b676dd.setContent(html_fe0c1e3721a46f2d716ce0153eff1220);
+            
+        
+
+        marker_8fd1016164abdb64eaca06c26071ed4d.bindPopup(popup_99429c35685abaa22b2ee6b528b676dd)
+        ;
+
+        
+    
+    
+            marker_8fd1016164abdb64eaca06c26071ed4d.bindTooltip(
+                `<div>
+                     Ecuador (🥇#7 | Risk: Moderate)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_bc510d1dca84f2113fa485fd097c1040 = L.marker(
+                [-9.19, -75.01],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_23e12a6f3601931727b99a75df682134 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FFD700; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                8\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_bc510d1dca84f2113fa485fd097c1040.setIcon(div_icon_23e12a6f3601931727b99a75df682134);
+        
+    
+        var popup_eb47cdfba1c25b14fd26686439201f15 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_51083323d406be79f2326e7dbe1501fe = $(`<div id="html_51083323d406be79f2326e7dbe1501fe" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Peru</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 8<br>                     📦 <b>Annual Production:</b> 170K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Moderate<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Moderate<br>                     👥 <b>Modern Slavery Estimate:</b> 200,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#00C851;                           width:72%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Free (72/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: US DoL 2023 Findings         </p>     </div>     </div>`)[0];
+                popup_eb47cdfba1c25b14fd26686439201f15.setContent(html_51083323d406be79f2326e7dbe1501fe);
+            
+        
+
+        marker_bc510d1dca84f2113fa485fd097c1040.bindPopup(popup_eb47cdfba1c25b14fd26686439201f15)
+        ;
+
+        
+    
+    
+            marker_bc510d1dca84f2113fa485fd097c1040.bindTooltip(
+                `<div>
+                     Peru (🥇#8 | Risk: Moderate)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b13a2c220a4d261895cedfa8cd7f8c71 = L.marker(
+                [18.74, -70.16],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_1367433700f3dd2fedcf41e9149c9fe6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FFD700; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                9\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_b13a2c220a4d261895cedfa8cd7f8c71.setIcon(div_icon_1367433700f3dd2fedcf41e9149c9fe6);
+        
+    
+        var popup_7e99c1a14c1ee7c128772a3685d5344d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9144d11b9e883a81f7e4f3c071fda492 = $(`<div id="html_9144d11b9e883a81f7e4f3c071fda492" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Dominican Republic</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 9<br>                     📦 <b>Annual Production:</b> 120K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Moderate<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Moderate<br>                     👥 <b>Modern Slavery Estimate:</b> 52,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:69%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (69/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Dominican Republic Labor Audit 2023         </p>     </div>     </div>`)[0];
+                popup_7e99c1a14c1ee7c128772a3685d5344d.setContent(html_9144d11b9e883a81f7e4f3c071fda492);
+            
+        
+
+        marker_b13a2c220a4d261895cedfa8cd7f8c71.bindPopup(popup_7e99c1a14c1ee7c128772a3685d5344d)
+        ;
+
+        
+    
+    
+            marker_b13a2c220a4d261895cedfa8cd7f8c71.bindTooltip(
+                `<div>
+                     Dominican Republic (🥇#9 | Risk: Moderate)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5a832b745546f190c9bd7ded4ed66ae1 = L.marker(
+                [4.57, -74.3],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_2a9ef9259c26b00b201f1ef996d0f0a6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FF4500; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                10\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_5a832b745546f190c9bd7ded4ed66ae1.setIcon(div_icon_2a9ef9259c26b00b201f1ef996d0f0a6);
+        
+    
+        var popup_85022f2a8ef75a019e77d8aa11c35761 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_75a10a5047412aef5f45300ea19e287d = $(`<div id="html_75a10a5047412aef5f45300ea19e287d" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Colombia</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 10<br>                     📦 <b>Annual Production:</b> 110K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> High<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 195,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:65%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (65/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Colombia Human Rights Report 2023         </p>     </div>     </div>`)[0];
+                popup_85022f2a8ef75a019e77d8aa11c35761.setContent(html_75a10a5047412aef5f45300ea19e287d);
+            
+        
+
+        marker_5a832b745546f190c9bd7ded4ed66ae1.bindPopup(popup_85022f2a8ef75a019e77d8aa11c35761)
+        ;
+
+        
+    
+    
+            marker_5a832b745546f190c9bd7ded4ed66ae1.bindTooltip(
+                `<div>
+                     Colombia (🥇#10 | Risk: High)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7b5516e06df648e44f8e7d066df83002 = L.marker(
+                [-6.31, 143.96],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_f6a075c8dc62a166d7ab389225b0acaf = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FF4500; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                11\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_7b5516e06df648e44f8e7d066df83002.setIcon(div_icon_f6a075c8dc62a166d7ab389225b0acaf);
+        
+    
+        var popup_e51ea6a32295bd08c31ac9d974ac74d0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d772537c1149bd4fcf052bd906e44137 = $(`<div id="html_d772537c1149bd4fcf052bd906e44137" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Papua New Guinea</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 11<br>                     📦 <b>Annual Production:</b> 80K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> High<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 54,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:61%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (61/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: ILO Pacific Region Report 2023         </p>     </div>     </div>`)[0];
+                popup_e51ea6a32295bd08c31ac9d974ac74d0.setContent(html_d772537c1149bd4fcf052bd906e44137);
+            
+        
+
+        marker_7b5516e06df648e44f8e7d066df83002.bindPopup(popup_e51ea6a32295bd08c31ac9d974ac74d0)
+        ;
+
+        
+    
+    
+            marker_7b5516e06df648e44f8e7d066df83002.bindTooltip(
+                `<div>
+                     Papua New Guinea (🥇#11 | Risk: High)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_17a17e8b34da6c050c10b886712a68d4 = L.marker(
+                [23.63, -102.55],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_62bad1c44d7f23f1d1d7742b25a3a01e = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FFD700; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                12\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_17a17e8b34da6c050c10b886712a68d4.setIcon(div_icon_62bad1c44d7f23f1d1d7742b25a3a01e);
+        
+    
+        var popup_47d34b6105d390344d966a0aa46e0c4c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8ccfdc284e763a0449c1277469741855 = $(`<div id="html_8ccfdc284e763a0449c1277469741855" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Mexico</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 12<br>                     📦 <b>Annual Production:</b> 75K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Moderate<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Moderate<br>                     👥 <b>Modern Slavery Estimate:</b> 340,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:62%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (62/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Mexican Govt Statistics 2023         </p>     </div>     </div>`)[0];
+                popup_47d34b6105d390344d966a0aa46e0c4c.setContent(html_8ccfdc284e763a0449c1277469741855);
+            
+        
+
+        marker_17a17e8b34da6c050c10b886712a68d4.bindPopup(popup_47d34b6105d390344d966a0aa46e0c4c)
+        ;
+
+        
+    
+    
+            marker_17a17e8b34da6c050c10b886712a68d4.bindTooltip(
+                `<div>
+                     Mexico (🥇#12 | Risk: Moderate)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f01edba75317f57248d98f2e8652d62f = L.marker(
+                [6.42, -66.59],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_3cb1caf8e4fb50f59212f24a373590cf = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#8B0000; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                13\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_f01edba75317f57248d98f2e8652d62f.setIcon(div_icon_3cb1caf8e4fb50f59212f24a373590cf);
+        
+    
+        var popup_b654aea0520f41807158298c823052f0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4684b7175abf12bed3a65171b75fd3ed = $(`<div id="html_4684b7175abf12bed3a65171b75fd3ed" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Venezuela</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 13<br>                     📦 <b>Annual Production:</b> 70K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Critical<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Extreme<br>                     👥 <b>Modern Slavery Estimate:</b> 174,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FF4444;                           width:16%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Not Free (16/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: UN Human Rights Council 2023         </p>     </div>     </div>`)[0];
+                popup_b654aea0520f41807158298c823052f0.setContent(html_4684b7175abf12bed3a65171b75fd3ed);
+            
+        
+
+        marker_f01edba75317f57248d98f2e8652d62f.bindPopup(popup_b654aea0520f41807158298c823052f0)
+        ;
+
+        
+    
+    
+            marker_f01edba75317f57248d98f2e8652d62f.bindTooltip(
+                `<div>
+                     Venezuela (🥇#13 | Risk: Critical)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9925c972cab848ece7fe7295761be215 = L.marker(
+                [20.59, 78.96],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_0bae870e2dae0272a5812c6724988845 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FF4500; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                14\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_9925c972cab848ece7fe7295761be215.setIcon(div_icon_0bae870e2dae0272a5812c6724988845);
+        
+    
+        var popup_4122e0d5f7440d6b5bd9b69838269a87 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e99bec6064e1d776aca5c41d028c96c6 = $(`<div id="html_e99bec6064e1d776aca5c41d028c96c6" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">India</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 14<br>                     📦 <b>Annual Production:</b> 65K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> High<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 8,000,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:66%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (66/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: India National Crime Records 2023         </p>     </div>     </div>`)[0];
+                popup_4122e0d5f7440d6b5bd9b69838269a87.setContent(html_e99bec6064e1d776aca5c41d028c96c6);
+            
+        
+
+        marker_9925c972cab848ece7fe7295761be215.bindPopup(popup_4122e0d5f7440d6b5bd9b69838269a87)
+        ;
+
+        
+    
+    
+            marker_9925c972cab848ece7fe7295761be215.bindTooltip(
+                `<div>
+                     India (🥇#14 | Risk: High)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c089dd839c590d8a9e1076ad1d5268fd = L.marker(
+                [6.43, -9.43],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_51eb9474237c8bc48b9aa10bdc46a69c = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#8B0000; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                15\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_c089dd839c590d8a9e1076ad1d5268fd.setIcon(div_icon_51eb9474237c8bc48b9aa10bdc46a69c);
+        
+    
+        var popup_deb8578026bf08cb5c80761bbd0af6b1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b5ed6a2b968cf2443485896f2d3bc3f6 = $(`<div id="html_b5ed6a2b968cf2443485896f2d3bc3f6" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Liberia</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 15<br>                     📦 <b>Annual Production:</b> 60K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Critical<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Extreme<br>                     👥 <b>Modern Slavery Estimate:</b> 65,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:54%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (54/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Liberia Labor Inspection Report 2023         </p>     </div>     </div>`)[0];
+                popup_deb8578026bf08cb5c80761bbd0af6b1.setContent(html_b5ed6a2b968cf2443485896f2d3bc3f6);
+            
+        
+
+        marker_c089dd839c590d8a9e1076ad1d5268fd.bindPopup(popup_deb8578026bf08cb5c80761bbd0af6b1)
+        ;
+
+        
+    
+    
+            marker_c089dd839c590d8a9e1076ad1d5268fd.bindTooltip(
+                `<div>
+                     Liberia (🥇#15 | Risk: Critical)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8ac1f85bc7ee6e7694781b7285917bfd = L.marker(
+                [8.46, -11.78],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_fa34ebedfede1e2c71018cef85c5e323 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#8B0000; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                16\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_8ac1f85bc7ee6e7694781b7285917bfd.setIcon(div_icon_fa34ebedfede1e2c71018cef85c5e323);
+        
+    
+        var popup_07a5333ef973cd81f3cb27b0f1af78ff = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e344093ab4e955b2ba6d70ddcbdc3d63 = $(`<div id="html_e344093ab4e955b2ba6d70ddcbdc3d63" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Sierra Leone</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 16<br>                     📦 <b>Annual Production:</b> 55K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Critical<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Extreme<br>                     👥 <b>Modern Slavery Estimate:</b> 59,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:56%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (56/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Sierra Leone UN Assessment 2023         </p>     </div>     </div>`)[0];
+                popup_07a5333ef973cd81f3cb27b0f1af78ff.setContent(html_e344093ab4e955b2ba6d70ddcbdc3d63);
+            
+        
+
+        marker_8ac1f85bc7ee6e7694781b7285917bfd.bindPopup(popup_07a5333ef973cd81f3cb27b0f1af78ff)
+        ;
+
+        
+    
+    
+            marker_8ac1f85bc7ee6e7694781b7285917bfd.bindTooltip(
+                `<div>
+                     Sierra Leone (🥇#16 | Risk: Critical)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3250553fe40e1e8625d73beb67022dad = L.marker(
+                [8.62, 0.82],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_e9c1ff7847bf41d12a3d56f7b4176d4b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FF4500; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                17\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_3250553fe40e1e8625d73beb67022dad.setIcon(div_icon_e9c1ff7847bf41d12a3d56f7b4176d4b);
+        
+    
+        var popup_039894b68f372378c3c7b092749f31a5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_95decc6c0f9d0fd253a7bc5c99c23e21 = $(`<div id="html_95decc6c0f9d0fd253a7bc5c99c23e21" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Togo</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 17<br>                     📦 <b>Annual Production:</b> 50K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> High<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 84,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:51%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (51/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Togo Child Protection Report 2023         </p>     </div>     </div>`)[0];
+                popup_039894b68f372378c3c7b092749f31a5.setContent(html_95decc6c0f9d0fd253a7bc5c99c23e21);
+            
+        
+
+        marker_3250553fe40e1e8625d73beb67022dad.bindPopup(popup_039894b68f372378c3c7b092749f31a5)
+        ;
+
+        
+    
+    
+            marker_3250553fe40e1e8625d73beb67022dad.bindTooltip(
+                `<div>
+                     Togo (🥇#17 | Risk: High)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_587fff36b11d330e714293761bd0e026 = L.marker(
+                [15.78, -90.23],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_6f6e566a2a1007b64b07b2111e1b4ed1 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FF4500; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                18\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_587fff36b11d330e714293761bd0e026.setIcon(div_icon_6f6e566a2a1007b64b07b2111e1b4ed1);
+        
+    
+        var popup_81b63aaf62ffeb37a480d75ddc63a006 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_cc7d8749ce855dd31a57e52dc1757dcf = $(`<div id="html_cc7d8749ce855dd31a57e52dc1757dcf" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Guatemala</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 18<br>                     📦 <b>Annual Production:</b> 45K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> High<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 280,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:53%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (53/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Guatemala Human Rights Watch 2023         </p>     </div>     </div>`)[0];
+                popup_81b63aaf62ffeb37a480d75ddc63a006.setContent(html_cc7d8749ce855dd31a57e52dc1757dcf);
+            
+        
+
+        marker_587fff36b11d330e714293761bd0e026.bindPopup(popup_81b63aaf62ffeb37a480d75ddc63a006)
+        ;
+
+        
+    
+    
+            marker_587fff36b11d330e714293761bd0e026.bindTooltip(
+                `<div>
+                     Guatemala (🥇#18 | Risk: High)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b5f5237a9780f3263f389bac007a1a24 = L.marker(
+                [15.2, -86.24],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_447b3a84382ee5ec76134a7eaa858701 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FF4500; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                19\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_b5f5237a9780f3263f389bac007a1a24.setIcon(div_icon_447b3a84382ee5ec76134a7eaa858701);
+        
+    
+        var popup_66ae4e89381b0c894ba4f379cbe857e0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_38e1bfadc469e98cafb9997d323b92ab = $(`<div id="html_38e1bfadc469e98cafb9997d323b92ab" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Honduras</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 19<br>                     📦 <b>Annual Production:</b> 40K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> High<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Severe<br>                     👥 <b>Modern Slavery Estimate:</b> 130,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#FFD700;                           width:45%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Partly Free (45/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Honduras Labor Ministry 2023         </p>     </div>     </div>`)[0];
+                popup_66ae4e89381b0c894ba4f379cbe857e0.setContent(html_38e1bfadc469e98cafb9997d323b92ab);
+            
+        
+
+        marker_b5f5237a9780f3263f389bac007a1a24.bindPopup(popup_66ae4e89381b0c894ba4f379cbe857e0)
+        ;
+
+        
+    
+    
+            marker_b5f5237a9780f3263f389bac007a1a24.bindTooltip(
+                `<div>
+                     Honduras (🥇#19 | Risk: High)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_98dd093e3b6e9468b6d1a89ff263848a = L.marker(
+                [9.75, -83.75],
+                {
+}
+            ).addTo(marker_cluster_02d5428955b26b1add277b970ceaae5c);
+        
+    
+            var div_icon_fad42cbbfda48831c9d6983e32cc4840 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:14pt; color:white; background:#FFD700; \n                border-radius:50%; width:35px; height:35px; display:flex; align-items:center; \n                justify-content:center; border:2px solid white; box-shadow:0 2px 4px rgba(0,0,0,0.3)\"\u003e\n                20\u003c/div\u003e",
+  "iconSize": [35, 35],
+  "iconAnchor": [17, 17],
+  "className": "empty",
+});
+            marker_98dd093e3b6e9468b6d1a89ff263848a.setIcon(div_icon_fad42cbbfda48831c9d6983e32cc4840);
+        
+    
+        var popup_320690ee347b98a6686bd2a72e7948bc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0d33b73c15045379316918f624d1fb65 = $(`<div id="html_0d33b73c15045379316918f624d1fb65" style="width: 100.0%; height: 100.0%;">     <div style="width:300px; font-family:Arial; line-height:1.4">         <h3 style="color:#8B4513; margin:0 0 10px 0">Costa Rica</h3>                  <div style="background:#FFF8E7; padding:15px; border-radius:8px">             <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">🌍 Production</h4>                 <p style="margin:0">                     🥇 <b>Global Rank:</b> 20<br>                     📦 <b>Annual Production:</b> 38K tons                 </p>             </div>                          <div style="margin-bottom:15px">                 <h4 style="margin:0 0 8px 0; color:#696969">⚠️ Labor Risks</h4>                 <p style="margin:0">                     🔴 <b>Slavery Risk:</b> Moderate<br>                     🔴 <b>Forced Labor:</b> Widespread<br>                     👶 <b>Child Labor:</b> Moderate<br>                     👥 <b>Modern Slavery Estimate:</b> 12,000                 </p>             </div>                          <div>                 <h4 style="margin:0 0 8px 0; color:#696969">🗽 Freedom Status</h4>                 <div style="background:#EEE; border-radius:4px; height:20px">                     <div style="background:#00C851;                           width:82%; height:100%; border-radius:4px">                     </div>                 </div>                 <p style="margin:5px 0 0 0">                     Free (82/100)<br>                     <small>Source: Freedom House 2024</small>                 </p>             </div>         </div>                  <p style="font-size:0.8em; color:#666; margin:10px 0 0 0">             Sources: Costa Rica Social Progress Index 2023         </p>     </div>     </div>`)[0];
+                popup_320690ee347b98a6686bd2a72e7948bc.setContent(html_0d33b73c15045379316918f624d1fb65);
+            
+        
+
+        marker_98dd093e3b6e9468b6d1a89ff263848a.bindPopup(popup_320690ee347b98a6686bd2a72e7948bc)
+        ;
+
+        
+    
+    
+            marker_98dd093e3b6e9468b6d1a89ff263848a.bindTooltip(
+                `<div>
+                     Costa Rica (🥇#20 | Risk: Moderate)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_02d5428955b26b1add277b970ceaae5c.addTo(map_d0a4bfe460748550d0ff885ca5c694e3);
+        
+    
+            tile_layer_573cced08d0492d2d4264e4bda15cd26.addTo(map_d0a4bfe460748550d0ff885ca5c694e3);
+        
+    
+            marker_cluster_02d5428955b26b1add277b970ceaae5c.addTo(map_d0a4bfe460748550d0ff885ca5c694e3);
+        
+</script>
+</html>
